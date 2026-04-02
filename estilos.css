@@ -1,0 +1,459 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+main {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.header {
+    position: fixed;
+    background-color: #7fbffa;
+    width: 100%;
+    top: 0;
+    height: 70px;
+    z-index: 1100;
+}
+
+.title {
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+
+.panel {
+    position: fixed;
+    z-index: 1000;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    background: #000000d8;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.panel.activo {
+    visibility: visible;
+    opacity: 1;
+}
+
+.panel a {
+    margin: 0;
+    font-size: 20px;
+    display: flex;
+    width: 100%;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.panel a:hover {
+    background-color: #7fbffa;
+}
+
+.hamburger {
+    all: unset;
+    display: flex;
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    z-index: 1100;
+    flex-direction: column;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    gap: 6px;
+    padding: 10px;
+
+}
+
+.hamburger span {
+    height: 5px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.stage {
+    margin: 50px;
+    display: flex;
+    min-height: 40vh;
+    background-color: #403e3e;
+}
+
+.ball {
+    margin: auto;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: #74b7e3;
+}
+
+.btnScroll {
+    all: unset;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #7fbffa;
+    border-radius: 50%;
+}
+
+.btnScroll img {
+    filter: brightness(0) invert(1);
+    height: 65%;
+    width: 65%;
+    align-items: center;
+}
+
+.btn-dark {
+    all: unset;
+    position: fixed;
+    bottom: 10px;
+    left: 20px;
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7fbffa;
+    border-radius: 50%;
+}
+
+.btn-dark img {
+    filter: brightness(0) invert(1);
+    height: 65%;
+    width: 65%;
+    align-items: center;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode .header,
+.dark-mode .btnScroll,
+.dark-mode .btn-dark,
+.dark-mode .panel a:hover {
+    background-color: #25629b;
+}
+
+.dark-mode .link {
+    color: #46a2d3;
+}
+
+.dark-mode .btnes {
+    background-color: #25629b9b;
+}
+
+.dark-mode .btnes:hover {
+    background-color: #63a5e39b;
+}
+
+.insta-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.instagram-media {
+    width: 100%;
+    max-width: 600px;
+}
+
+.link {
+    padding-top: 15px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #a8d1f8;
+}
+
+.mapa-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.mapa-container iframe {
+    width: 700px;
+    height: 500px;
+}
+
+.btnes {
+    all: unset;
+    border: 3px solid #ccc;
+    height: 30px;
+    width: 85px;
+    margin: 0px 3px;
+    cursor: pointer;
+    background-color: #7fbefa8d;
+    border-radius: 4px;
+}
+
+.btnes:hover {
+    background-color: #90c6f85e;
+}
+
+.txtbox {
+    width: 300px;
+    height: 20px;
+    padding: 10px 12px;
+    margin: 6px 0;
+    border: 3px solid #ccc;
+    border-radius: 30px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.txtboxA {
+    width: 130px;
+    height: 20px;
+    padding: 10px 12px;
+    margin: 6px 0;
+    border: 3px solid #ccc;
+    border-radius: 30px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.txtbox:focus, .txtboxA:focus {
+    border-color: #0e78f1;
+}
+
+.online, .offline {
+    position: fixed;
+    height: 30px;
+    width: 100%;
+    top: 70px;
+    z-index: 1200;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #419e24;
+    color: #fff;
+}
+
+.offline {
+    background-color: #c51f1f;
+}
+
+#webCam {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    transform: scaleX(-1);
+}
+
+#geolocation, #user-dev, #cuentaRegresiva, #reloj {
+    font-size: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+    padding: 40px;
+    padding-top: 0;
+}
+
+.card {
+    background-color: #5b5f61;
+    color: white;
+    transition: all 0.3s ease-out;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card figcaption {
+    padding: 15px;
+    font-size: 16px;
+}
+
+.player {
+    font-size: 15px;
+}
+
+.player.winner {
+    text-decoration: underline;
+    font-weight: bold;
+    color: crimson;
+}
+
+/* ********************* CARRUSEL ********************* */
+
+.slider {
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    position: relative;
+}
+
+.slides {
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    visibility: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider-btns {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+}
+
+.slider button {
+    all: unset;
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 1;
+
+    font-size: 20px;
+    transform: translateY(-20%);
+}
+
+.slider-btns .ant {
+    left: 10px;
+}
+
+.slider-btns .sig {
+    right: 10px;
+}
+
+.slider button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ********************* SCROLLSPY ********************* */
+
+@media screen and (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: 4rem auto;
+        grid-template-areas: 
+        "header header"
+        "main   panel";
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    .header {
+        grid-area: header;
+    }
+
+    .panel {
+        grid-area: panel;
+        position: sticky;
+        top: 70px;
+        transform: translate(0, 0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .panel a {
+        font-size: 18px;
+        box-sizing: border-box;
+        justify-content: flex-end;
+        padding-right: 20px;
+        height: 70px;
+    }
+
+    
+
+    .hamburger {
+        display: none;
+    }
+
+    .btnScroll {
+        left: 80px;
+    }
+
+    .panel a:hover {
+        background-color: #7fbefa5d; 
+    }
+    
+    .panel a.activo {
+        background-color: #7fbffa;
+    }
+    
+    .dark-mode .panel a:hover {
+        background-color: #25629b49;
+    }
+
+    .dark-mode .panel a.activo {
+        background-color: #25629b;
+    }
+    /* * {
+        outline: 1px solid red;
+    } */
+}
+
+.videoI {
+    width: 750px;
+    height: auto;
+}

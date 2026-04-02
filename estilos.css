@@ -201,7 +201,6 @@ ul {
 }
 
 .btnes {
-    all: unset;
     border: 3px solid #ccc;
     height: 40px;
     width: 120px;

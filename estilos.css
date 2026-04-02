@@ -454,6 +454,9 @@ ul {
 }
 
 .videoI {
-    width: 750px;
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
     height: auto;
+    padding: 20px;
 }

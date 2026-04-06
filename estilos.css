@@ -162,6 +162,7 @@ ul {
 
 .dark-mode .btnes {
     background-color: #25629b9b;
+    color: white;
 }
 
 .dark-mode .btnes:hover {
@@ -224,6 +225,8 @@ ul {
     font-size: 14px;
     outline: none;
     transition: all 0.25s ease;
+
+    font-family: sans-serif;
 }
 
 .txtboxA {
@@ -236,6 +239,22 @@ ul {
     font-size: 14px;
     outline: none;
     transition: all 0.25s ease;
+
+    font-family: sans-serif;
+}
+
+.txt-comments {
+    width: 280px;
+    height: auto;
+    margin: 6px 0;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.25s ease;
+
+    font-family: sans-serif;
 }
 
 .txtbox:focus, .txtboxA:focus {
@@ -457,4 +476,66 @@ ul {
     box-sizing: border-box;
     height: auto;
     padding: 20px;
+}
+
+/* ********************* FORMULARIO ********************* */
+
+
+.form-loader {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-loader img {
+    width: 30px;
+}
+
+.form [required]:invalid:not(:placeholder-shown) {
+    border: 2px solid #cc3030;
+}
+
+.form [required]:valid:not(:placeholder-shown) {
+    border: 2px solid #30cc38;
+}
+
+.form-error {
+    margin-top: -1rem;
+    font-size: 14px;
+    background-color: #f80000;
+    color: white;
+    transition: all 800ms ease;
+
+    width: 300px;
+    height: 25px;
+    justify-content: center;
+    align-items: flex-end;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.none {
+    display: none;
+}
+
+.form-error.activo {
+    display: flex;
+    position: relative;
+    z-index: -1;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+
+
+@keyframes show-message {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
 }

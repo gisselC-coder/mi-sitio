@@ -31,7 +31,7 @@
             <li><a href="#s11" data-scroll-spy>Sorteo Digital</a></li>
             <li><a href="#s12" data-scroll-spy>Responsive Slider</a></li>
             <li><a href="#s13" data-scroll-spy>Video Inteligente</a></li>
-            <li><a href="#s14" data-scroll-spy>Sección 14</a></li>
+            <li><a href="#s14" data-scroll-spy>Validaciones de Formulario</a></li>
             <li><a href="#s15" data-scroll-spy>Sección 15</a></li>
         </ul>
     </aside>
@@ -210,6 +210,58 @@
             <br><br><br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br>
             <video class="videoI" src="extras/video.mp4" muted controls data-smart-video></video>
+        </section>
+
+        <section id="s14" class="section" data-scroll-spy>
+            <h2>Validaciones de Formulario</h2>
+            <form class="form" action="https://formsubmit.co/gisselc526@gmail.com" method="POST">
+                <legend>Contacto</legend>
+                <br>
+                <input 
+                class="txtbox" 
+                type="text" 
+                name="nombre" 
+                placeholder="Ingrese su nombre" 
+                title="Solo se aceptan letras y espacios" 
+                pattern="^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$" 
+                required>
+                <br>
+                <input 
+                class="txtbox" 
+                type="email"
+                name="email" 
+                placeholder="Ingrese su email" 
+                title="Ingrese un email válido" 
+                pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" 
+                required>
+                <br>
+                <input 
+                class="txtbox" 
+                type="text"
+                name="asunto" 
+                placeholder="Ingrese el asunto" 
+                title="Ingrese el asunto" 
+                required>
+                <br>
+                <textarea 
+                class="txt-comments" 
+                name="comentarios" 
+                cols="50"
+                rows="5"
+                placeholder="Ingrese sus comentarios" 
+                title="Comentario demasiado largo" 
+                data-pattern="^.{1,250}$"
+                required></textarea>
+                <br><br>
+                <input class="btnes" type="submit" value="Enviar">
+                <br><br>
+                <div class="form-loader none">
+                    <img src="extras/cargando.svg" alt="cargando">
+                </div>
+                <div class="form-respuesta none">
+                    <p>Datos Enviados</p>
+                </div>
+            </form>
         </section>
 
         

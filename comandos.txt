@@ -1,0 +1,10 @@
+hacer cambios en github:
+- cambios en todo:
+git add .
+git commit -m "cambiar a index.html"
+git push
+
+- cambios en un archivo especifico:
+git add estilos.css
+git commit -m "arreglo CSS"
+git push

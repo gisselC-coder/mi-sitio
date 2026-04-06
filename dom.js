@@ -33,12 +33,11 @@ function closeMenu() {
     hamburger.classList.remove("activo");
 }
 
-// Ejercicio 2 - Reloj
+// Ejercicio 2 - Reloj y Alarma
 const reloj = document.getElementById("reloj");
 const playR = document.getElementById("iniciar-reloj");
 const stopR = document.getElementById("detener-reloj");
 let timer = null;
-
 function iniciarReloj() {
     if (timer !== null) return;
 
@@ -57,12 +56,10 @@ function detenerReloj() {
     playR.disabled = false;
 }
 
-// Ejercicio 3 - Alarma
 const playA = document.getElementById("iniciar-alarma");
 const stopA = document.getElementById("detener-alarma");
 let alarm = null;
 const sonido = new Audio("extras/alarma.mp3");
-
 function iniciarAlarma() {
     if (alarm !== null) return;
 
@@ -81,7 +78,7 @@ function detenerAlarma() {
     playA.disabled = false;
 }
 
-// Ejercicio 4 - Detectar teclas
+// Ejercicio - Detectar teclas
 function detectarTecla(e) {
     /* console.log(e.type);
     console.log(e.key);
@@ -96,7 +93,7 @@ function detectarTecla(e) {
     } */
 }
 
-// Ejercicio 5 - Movimientos y Colisiones
+// Ejercicio 3 - Movimientos y Colisiones
 const ball = document.querySelector(".ball");
 const fondo = document.querySelector(".stage");
 let x = 0, y = 0;
@@ -132,7 +129,7 @@ function mover(e) {
     ball.style.transform = `translate(${x * 10}px, ${y * 10}px)`;
 }
 
-// Ejercicio 6 - Cuenta Regresiva
+// Ejercicio 4 - Cuenta Regresiva
 const cuenta = document.getElementById("cuentaRegresiva");
 function cuentaReg(fechaObjetivo) {
     const ahora = new Date().getTime();
@@ -161,7 +158,7 @@ function iniciarCuenta() {
     }, 1000);
 }
 
-// Ejercicio 7 - Botón de Scroll
+// Ejercicio 5 - Botón de Scroll
 const scroll = document.querySelector(".btnScroll");
 function botonScroll(){
     window.addEventListener("scroll", () => {
@@ -180,7 +177,7 @@ function botonScroll(){
     });
 }
 
-// Ejercicio 8 y 9 - Modo oscuro + localStorage
+// Ejercicio 6 y 7 - Modo oscuro + localStorage
 const btnDark = document.querySelector(".btn-dark");
 function modoOscuro() {
     document.body.classList.toggle("dark-mode");
@@ -200,7 +197,7 @@ function cargarTema() {
     }
 }
 
-// Ejericio 10 - Responsive
+// Ejericio 8 - Responsive
 const breakpoint = window.matchMedia("(min-width: 768px)");
 
 function responsive(e) {
@@ -240,7 +237,7 @@ function responsive(e) {
     }
 }
 
-// Ejercicio 11 - Responsive Tester
+// Ejercicio 9 - Responsive Tester
 const form = document.getElementById("resTester");
 const btnCerrar = document.querySelector("input[name='cerrar']");
 let testerWindow = null;
@@ -269,7 +266,7 @@ function cerrarTester() {
     }
 }
 
-// Ejercicio 12 - User Agent
+// Ejercicio 10 - User Agent
 const userA = document.getElementById("user-dev");
 const ua = navigator.userAgent;
 function userDevice() {
@@ -333,7 +330,7 @@ function userDevice() {
     }
 }
 
-// Ejercicio 13 - Estado de la red
+// Ejercicio 11 - Estado de la red
 function estadoRed() {
     const online = () => {
         const div = document.createElement("div");
@@ -355,7 +352,7 @@ function estadoRed() {
     window.addEventListener("offline", online);
 }
 
-// Ejercicio 14 - Detección de la WebCam
+// Ejercicio 12 - Detección de la WebCam
 const webcam = document.getElementById("webCam");
 function iniciarWebCam() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
@@ -371,7 +368,7 @@ function iniciarWebCam() {
         });
 }
 
-// Ejercicio 15 - Geolocalización 
+// Ejercicio 13 - Geolocalización 
 const geo = document.getElementById("geolocation");
 function obtenerUbi() {
     const options = {
@@ -405,7 +402,7 @@ function obtenerUbi() {
     navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
-// Ejercicio 16 - Filtros de Búsqueda
+// Ejercicio 14 - Filtros de Búsqueda
 
 function filters(input, selector) {
     document.addEventListener("keyup", (e) => {
@@ -429,7 +426,7 @@ function filters(input, selector) {
 
 }
 
-// Ejercicio 16 - Sorteo Digital
+// Ejercicio 15 - Sorteo Digital
 function sorteoD(btn, selector) {
     function obtenerGanador () {
         const players = document.querySelectorAll(selector);
@@ -453,7 +450,7 @@ function sorteoD(btn, selector) {
     });
 }
 
-// Ejercicio 17 - Carrusel 
+// Ejercicio 16 - Carrusel 
 function slider() {
     const slides = document.querySelectorAll(".slide");
 
@@ -488,7 +485,7 @@ function slider() {
     });
 }
 
-// Ejercicio 18 - ScrollSpy
+// Ejercicio 17 - ScrollSpy
 function scrollSpy() {
     const sections = document.querySelectorAll("section[data-scroll-spy]");
     const links = document.querySelectorAll(".panel a[data-scroll-spy]");
@@ -513,7 +510,7 @@ function scrollSpy() {
     sections.forEach(el => observer.observe(el));
 }
 
-// Ejercicio 19 - Video Inteligente
+// Ejercicio 18 - Video Inteligente
 function videoInteligente() {
     const videos = document.querySelectorAll("video[data-smart-video]");
 
@@ -541,7 +538,7 @@ function videoInteligente() {
     
 }
 
-// Ejercicio 20 - Validacion de formulario
+// Ejercicio 19 - Validacion de formulario
 function validarForm() {
     const form = document.querySelector(".form");
     const inputs = document.querySelectorAll(".form [required]");
@@ -608,6 +605,53 @@ function validarForm() {
     });
 }
 
+// Ejercicio 20
+function leerTexto() {
+  const voz = document.getElementById("voz");
+  const texto = document.getElementById("leer-texto");  
+  const btn = document.getElementById("leer-btn");
+  const speechMessage = new SpeechSynthesisUtterance();
+
+  let voices = [];
+
+  speechSynthesis.addEventListener("voiceschanged", () => {
+    voices = speechSynthesis.getVoices();
+
+    voz.innerHTML = "";
+
+    voices.forEach((voice) => {
+      const option = document.createElement("option");
+      option.value = voice.name;
+      option.textContent = `${voice.name} - ${voice.lang}`;
+
+      if (voice.default) {
+        option.textContent += " - DEFAULT";
+      }
+
+      option.setAttribute("data-name", voice.name);
+      option.setAttribute("data-lang", voice.lang);
+
+      voz.appendChild(option);
+    });
+  });
+
+  document.addEventListener("change", (e) => {
+    if (e.target === voz) {
+      speechMessage.voice = voices.find(
+        (voice) => voice.name === e.target.value
+      );
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (e.target === btn) {
+      speechSynthesis.cancel(); // 🔥 evita stacking
+      speechMessage.text = texto.value;
+      speechSynthesis.speak(speechMessage);
+    }
+  });
+}
+
 function initEvents() {
     scrollMenu();
 
@@ -658,6 +702,8 @@ function initEvents() {
     videoInteligente();
 
     validarForm();
+
+    leerTexto();
 }
 
 

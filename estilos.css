@@ -257,7 +257,7 @@ ul {
     font-family: sans-serif;
 }
 
-.txtbox:focus, .txtboxA:focus {
+.txtbox:focus, .txtboxA:focus, .txt-comments:focus {
     border-color: #0e78f1;
 }
 

@@ -33,7 +33,7 @@ function closeMenu() {
     hamburger.classList.remove("activo");
 }
 
-// Ejercicio 2 - Reloj y Alarma
+// Ejercicio 2 - Reloj
 const reloj = document.getElementById("reloj");
 const playR = document.getElementById("iniciar-reloj");
 const stopR = document.getElementById("detener-reloj");
@@ -56,6 +56,7 @@ function detenerReloj() {
     playR.disabled = false;
 }
 
+// Ejercicio 3 - Alarma
 const playA = document.getElementById("iniciar-alarma");
 const stopA = document.getElementById("detener-alarma");
 let alarm = null;
@@ -93,7 +94,7 @@ function detectarTecla(e) {
     } */
 }
 
-// Ejercicio 3 - Movimientos y Colisiones
+// Ejercicio 4 - Movimientos y Colisiones
 const ball = document.querySelector(".ball");
 const fondo = document.querySelector(".stage");
 let x = 0, y = 0;
@@ -129,7 +130,7 @@ function mover(e) {
     ball.style.transform = `translate(${x * 10}px, ${y * 10}px)`;
 }
 
-// Ejercicio 4 - Cuenta Regresiva
+// Ejercicio 5 - Cuenta Regresiva
 const cuenta = document.getElementById("cuentaRegresiva");
 function cuentaReg(fechaObjetivo) {
     const ahora = new Date().getTime();
@@ -146,7 +147,8 @@ function cuentaReg(fechaObjetivo) {
     let minutos = Math.floor(tiempoRestante / (1000* 60) % 60);
     let segundos = Math.floor(tiempoRestante / (1000) % 60);
 
-    cuenta.innerHTML = `<h3>Faltan ${dias}d ${horas}h ${minutos}m ${segundos}s para acabar el año</h3>`
+    cuenta.innerHTML = `<h3>Faltan ${dias}d ${horas}h ${minutos}m ${segundos}s 
+    para acabar el año</h3>`
 }
 
 let contador = null;
@@ -158,7 +160,7 @@ function iniciarCuenta() {
     }, 1000);
 }
 
-// Ejercicio 5 - Botón de Scroll
+// Ejercicio 6 - Botón de Scroll
 const scroll = document.querySelector(".btnScroll");
 function botonScroll(){
     window.addEventListener("scroll", () => {
@@ -177,7 +179,7 @@ function botonScroll(){
     });
 }
 
-// Ejercicio 6 y 7 - Modo oscuro + localStorage
+// Ejercicio 7 y 8 - Modo oscuro + localStorage
 const btnDark = document.querySelector(".btn-dark");
 function modoOscuro() {
     document.body.classList.toggle("dark-mode");
@@ -197,7 +199,7 @@ function cargarTema() {
     }
 }
 
-// Ejericio 8 - Responsive
+// Ejericio 9 - Responsive
 const breakpoint = window.matchMedia("(min-width: 768px)");
 
 function responsive(e) {
@@ -237,7 +239,7 @@ function responsive(e) {
     }
 }
 
-// Ejercicio 9 - Responsive Tester
+// Ejercicio 10 - Responsive Tester
 const form = document.getElementById("resTester");
 const btnCerrar = document.querySelector("input[name='cerrar']");
 let testerWindow = null;
@@ -266,12 +268,11 @@ function cerrarTester() {
     }
 }
 
-// Ejercicio 10 - User Agent
+// Ejercicio 11 - User Agent
 const userA = document.getElementById("user-dev");
 const ua = navigator.userAgent;
 function userDevice() {
     //console.log(navigator.userAgent);
-    //userA.textContent = navigator.userAgent;
     const isMobile = {
         android: () => /android/i.test(ua),
         ios: () => /iphone|ipad|ipod/i.test(ua),
@@ -309,28 +310,17 @@ function userDevice() {
             </b></li>
         </ul>
     `;
-
     // contenido exclusivo
-    if(isBrowser.chrome()) {
-        userA.innerHTML += `<p><mark>Este contenido solo se ve en Chrome</mark></p>`;
-    }
-    if(isBrowser.edge()) {
-        userA.innerHTML += `<p><mark>Este contenido solo se ve en Edge</mark></p>`;
-    }
-    if(isDesktop.windows()) {
-        userA.innerHTML += `<p><mark>Descarga nuestro Software para Windows</mark></p>`;
-    }
-    if(isMobile.android()) {
-        userA.innerHTML += `<p><mark>Descarga nuestro Software para Android</mark></p>`;
-    }
+    if(isBrowser.chrome()) userA.innerHTML += `<p><mark>Este contenido solo se ve en Chrome</mark></p>`;
+    if(isBrowser.edge()) userA.innerHTML += `<p><mark>Este contenido solo se ve en Edge</mark></p>`;
+    if(isDesktop.windows()) userA.innerHTML += `<p><mark>Descarga nuestro Software para Windows</mark></p>`;
+    if(isMobile.android()) userA.innerHTML += `<p><mark>Descarga nuestro Software para Android</mark></p>`;
 
     // redirecciones
-    if(isMobile.ios()) {
-        //window.location.href = "https://instagram.com/";
-    }
+    if(isMobile.ios()) window.location.href = "https://instagram.com/";
 }
 
-// Ejercicio 11 - Estado de la red
+// Ejercicio 12 - Estado de la red
 function estadoRed() {
     const online = () => {
         const div = document.createElement("div");
@@ -352,7 +342,7 @@ function estadoRed() {
     window.addEventListener("offline", online);
 }
 
-// Ejercicio 12 - Detección de la WebCam
+// Ejercicio 13 - Detección de la WebCam
 const webcam = document.getElementById("webCam");
 function iniciarWebCam() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
@@ -368,7 +358,7 @@ function iniciarWebCam() {
         });
 }
 
-// Ejercicio 13 - Geolocalización 
+// Ejercicio 14 - Geolocalización 
 const geo = document.getElementById("geolocation");
 function obtenerUbi() {
     const options = {
@@ -388,7 +378,9 @@ function obtenerUbi() {
                 <li>Precisión: <b>${coords.accuracy}</b> metros</li>
             </ul>
             <br>
-            <a class="link" href="https://www.google.com/maps/@${coords.latitude},${coords.longitude},20z" target="_blank" rel="noopener">
+            <a class="link" 
+            href="https://www.google.com/maps/@${coords.latitude},${coords.longitude},20z" 
+            target="_blank" rel="noopener">
                 📍 Ver en Google Maps
             </a>
         `;
@@ -402,8 +394,7 @@ function obtenerUbi() {
     navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
-// Ejercicio 14 - Filtros de Búsqueda
-
+// Ejercicio 15 - Filtros de Búsqueda
 function filters(input, selector) {
     document.addEventListener("keyup", (e) => {
         if(e.target.matches(input)) {
@@ -423,10 +414,9 @@ function filters(input, selector) {
             });
         }
     });
-
 }
 
-// Ejercicio 15 - Sorteo Digital
+// Ejercicio 16 - Sorteo Digital
 function sorteoD(btn, selector) {
     function obtenerGanador () {
         const players = document.querySelectorAll(selector);
@@ -450,14 +440,11 @@ function sorteoD(btn, selector) {
     });
 }
 
-// Ejercicio 16 - Carrusel 
+// Ejercicio 17 - Carrusel 
 function slider() {
     const slides = document.querySelectorAll(".slide");
-
     let i = 0;
-
     document.addEventListener("click", (e) => {
-
         // anterior
         if (e.target.matches(".ant")) {
             e.preventDefault();
@@ -469,7 +456,6 @@ function slider() {
 
             slides[i].classList.add("active");
         }
-
         // siguiente
         if (e.target.matches(".sig")) {
             e.preventDefault();
@@ -481,11 +467,10 @@ function slider() {
 
             slides[i].classList.add("active");
         }
-
     });
 }
 
-// Ejercicio 17 - ScrollSpy
+// Ejercicio 18 - ScrollSpy
 function scrollSpy() {
     const sections = document.querySelectorAll("section[data-scroll-spy]");
     const links = document.querySelectorAll(".panel a[data-scroll-spy]");
@@ -501,7 +486,6 @@ function scrollSpy() {
             }
         });
     };
-
     const observer = new IntersectionObserver(cb, {
         rootMargin: "-160px 0px -80% 0px",
         threshold: 0
@@ -510,7 +494,7 @@ function scrollSpy() {
     sections.forEach(el => observer.observe(el));
 }
 
-// Ejercicio 18 - Video Inteligente
+// Ejercicio 19 - Video Inteligente
 function videoInteligente() {
     const videos = document.querySelectorAll("video[data-smart-video]");
 
@@ -521,7 +505,6 @@ function videoInteligente() {
             } else {
                 entry.target.pause();
             }
-
             window.addEventListener("visibilitychange", (e) => 
                 document.visibilityState === "visible"
                 ? entry.target.play()
@@ -529,16 +512,13 @@ function videoInteligente() {
             );
         });
     };
-
     const observer = new IntersectionObserver(cb, {
         threshold: 0.5
     });
-
     videos.forEach((el) => observer.observe(el));
-    
 }
 
-// Ejercicio 19 - Validacion de formulario
+// Ejercicio 20 y 21 - Validacion y Envío de Formulario
 function validarForm() {
     const form = document.querySelector(".form");
     const inputs = document.querySelectorAll(".form [required]");
@@ -605,7 +585,7 @@ function validarForm() {
     });
 }
 
-// Ejercicio 20
+// Ejercicio 22 - Narrador
 function leerTexto() {
   const voz = document.getElementById("voz");
   const texto = document.getElementById("leer-texto");  
@@ -645,7 +625,7 @@ function leerTexto() {
 
   document.addEventListener("click", (e) => {
     if (e.target === btn) {
-      speechSynthesis.cancel(); // 🔥 evita stacking
+      speechSynthesis.cancel();
       speechMessage.text = texto.value;
       speechSynthesis.speak(speechMessage);
     }

@@ -302,7 +302,7 @@ ul {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 10px;
     margin: 30px;
     padding-top: 0;
@@ -480,11 +480,11 @@ ul {
 }
 
 .videoI {
-    width: 100%;
+    display: block;
+    width: 90%;
     max-width: 750px;
-    box-sizing: border-box;
     height: auto;
-    padding: 20px;
+    margin: 20px auto;
 }
 
 /* ********************* FORMULARIO ********************* */
@@ -514,6 +514,7 @@ ul {
     background-color: #f80000;
     color: white;
     transition: all 800ms ease;
+    padding-bottom: 5px;
 
     width: 300px;
     height: 25px;

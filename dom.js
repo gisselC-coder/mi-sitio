@@ -18,7 +18,7 @@ function scrollMenu() {
     });
 }
 
-// Ejercicio 1 - Botón hambrguesa
+// Ejercicio 1 - Botón hamburguesa
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.querySelector(".panel");
 const navLinks = document.querySelectorAll(".panel a");
